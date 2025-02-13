@@ -38,7 +38,7 @@ soc = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 try:
     soc.connect((target_ip, target_port))
 except ConnectionRefusedError:
-    print("Connection refused (Hint: Does the server exist?)")
+    exit("Connection refused (Hint: Does the server exist?)")
     
 # Start the thread to receive messages
 threading.Thread(target=receive_messages, daemon=True).start()
